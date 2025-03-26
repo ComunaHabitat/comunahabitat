@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comuna Hábitat - Hacemos ciudad, desarrollamos valor</title>
+    <meta name="description" content="Consultoría, planeación, gestión y promoción de proyectos inmobiliarios rentables y sostenibles.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --deep-navy: #20374E;
+            --midnight-navy: #304B6D;
+            --pale-gold: #E1BA88;
+            --alba-gold: #F0DBB8;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark-gray: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--deep-navy);
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--deep-navy);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--pale-gold);
+            margin-right: 15px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon::before, .logo-icon::after {
+            content: '';
+            position: absolute;
+            background-color: var(--deep-navy);
+        }
+        
+        .logo-icon::before {
+            width: 20px;
+            height: 30px;
+            left: 5px;
+        }
+        
+        .logo-icon::after {
+            width: 15px;
+            height: 40px;
+            right: 5px;
+        }
+        
+        .logo-text {
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+        
+        .logo-text span {
+            display: block;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            margin-top: 5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--pale-gold);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--pale-gold);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(32, 55, 78, 0.7), rgba(32, 55, 78, 0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .hero h1 span {
+            display: block;
+            font-size: 2rem;
+            margin-top: 10px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--pale-gold);
+            color: var(--deep-navy);
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        
+        .btn:hover {
+            background-color: var(--alba-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--pale-gold);
+            color: var(--pale-gold);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--pale-gold);
+            color: var(--deep-navy);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--pale-gold);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .about-text h3 {
+            color: var(--midnight-navy);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            margin-top: 30px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mission-vision {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        
+        .mission, .vision {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            margin: 10px;
+            background-color: var(--white);
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission::before, .vision::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--pale-gold);
+        }
+        
+        .mission h3, .vision h3 {
+            color: var(--midnight-navy);
+            margin-bottom: 15px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background-color: var(--light-gray);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-image {
+            height: 200px;
+            background-color: var(--midnight-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            color: var(--midnight-navy);
+            margin-bottom: 15px;
+        }
+        
+        .service-content ul {
+            list-style-position: inside;
+            margin-top: 15px;
+        }
+        
+        .service-content ul li {
+            margin-bottom: 8px;
+        }
+        
+        /* Business Model Section */
+        .business-model {
+            padding: 100px 0;
+            background-color: var(--midnight-navy);
+            color: var(--white);
+        }
+        
+        .business-model .section-title {
+            color: var(--white);
+        }
+        
+        .business-model .section-title::after {
+            background-color: var(--pale-gold);
+        }
+        
+        .model-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        
+        .model-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .model-text h3 {
+            color: var(--pale-gold);
+            margin-bottom: 20px;
+        }
+        
+        .model-distribution {
+            flex: 1;
+            min-width: 300px;
+            margin-top: 30px;
+        }
+        
+        .distribution-item {
+            margin-bottom: 20px;
+        }
+        
+        .distribution-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .distribution-bar {
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .distribution-fill {
+            height: 100%;
+            background-color: var(--pale-gold);
+            border-radius: 5px;
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 300px;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(32, 55, 78, 0.9), transparent);
+            padding: 20px;
+            color: var(--white);
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.1);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .contact-info h3 {
+            color: var(--midnight-navy);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+        
+        .contact-info .social-links {
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: var(--midnight-navy);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--pale-gold);
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            margin-top: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: var(--midnight-navy);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--midnight-navy);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo .logo-text {
+            font-size: 1.2rem;
+        }
+        
+        .footer-logo p {
+            margin-top: 15px;
+            max-width: 300px;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links h3 {
+            color: var(--pale-gold);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--pale-gold);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 span {
+                font-size: 1.5rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+                max-width: 250px;
+            }
+            
+            .about-text, .about-image {
+                padding-right: 0;
+            }
+            
+            .mission, .vision {
+                margin: 10px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 20px;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h1 span {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    COMUNA <span>HÁBITAT</span>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#modelo-negocio">Modelo de Negocio</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>HACEMOS CIUDAD <span>DESARROLLAMOS VALOR</span></h1>
+                <p>Consultoría, planeación, gestión y promoción de proyectos inmobiliarios rentables y sostenibles.</p>
+                <div class="hero-buttons">
+                    <a href="#servicios" class="btn">Conoce nuestros servicios</a>
+                    <a href="#contacto" class="btn btn-outline">Contáctanos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="quienes-somos">
+        <div class="container">
+            <h2 class="section-title">Quiénes Somos</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Comuna Hábitat es una empresa innovadora dedicada a la planeación, gestión y promoción de proyectos inmobiliarios sostenibles y rentables, comprometida con crear espacios habitables de calidad y amables en todo el sentido de la palabra.</p>
+                    <h3>Nuestra filosofía</h3>
+                    <p>Nos mueve una reflexión ética constante: ¿Qué hacer con aquello que tenemos a nuestro alcance? Nuestra respuesta es "hacer ciudad" que significa construir espacios en los que deseamos vivir y con-vivir, en los que nos identifiquemos, sean funcionales, eficientes, sostenibles y rentables.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Edificios modernos">
+                </div>
+            </div>
+            <div class="mission-vision">
+                <div class="mission">
+                    <h3>Misión</h3>
+                    <p>Generar soluciones integrales en la planeación, gestión y promoción de proyectos inmobiliarios, combinando innovación, flexibilidad, funcionalidad, sostenibilidad y rentabilidad para ofrecer valor tangible a nuestros clientes y mejorar la ciudad.</p>
+                </div>
+                <div class="vision">
+                    <h3>Visión</h3>
+                    <p>Ser referentes en el desarrollo de proyectos inmobiliarios sostenibles y rentables que transformen positivamente la ciudad y promuevan la prosperidad del entorno urbano y comunitario.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Planeación y Diseño</h3>
+                        <ul>
+                            <li>Estudios de mercado inmobiliario</li>
+                            <li>Conceptualización integral de proyectos</li>
+                            <li>Anteproyecto arquitectónico y financiero</li>
+                            <li>Desarrollo de proyectos ejecutivos</li>
+                            <li>Modelado 3D y renderizado</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Gestión y Ejecución</h3>
+                        <ul>
+                            <li>Elaboración de presupuestos</li>
+                            <li>Supervisión y administración</li>
+                            <li>Remodelaciones adaptadas</li>
+                            <li>Gestión del proyecto completa</li>
+                            <li>Coordinación de equipos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Promoción y Consultoría</h3>
+                        <ul>
+                            <li>Identificación de propiedades</li>
+                            <li>Consultoría estratégica</li>
+                            <li>Cursos y capacitaciones</li>
+                            <li>Espacio de coworking</li>
+                            <li>Asesoría financiera</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Model Section -->
+    <section class="business-model" id="modelo-negocio">
+        <div class="container">
+            <h2 class="section-title">Modelo de Negocio</h2>
+            <div class="model-content">
+                <div class="model-text">
+                    <p>En Comuna Hábitat ofrecemos servicios integrales, personalizados y de calidad para una variedad de clientes: propietarios de terrenos, profesionales de la construcción, desarrolladores, inversionistas inmobiliarios y entidades públicas. Además, operamos en un esquema de trabajo colaborativo, compartiendo utilidades entre nuestros colaboradores y reinvirtiendo en el crecimiento constante de la empresa.</p>
+                    <h3>Distribución de ingresos</h3>
+                </div>
+                <div class="model-distribution">
+                    <div class="distribution-item">
+                        <div class="distribution-label">
+                            <span>Inversión y crecimiento</span>
+                            <span>20%</span>
+                        </div>
+                        <div class="distribution-bar">
+                            <div class="distribution-fill" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    <div class="distribution-item">
+                        <div class="distribution-label">
+                            <span>Colaborador que gestiona/vende</span>
+                            <span>15%</span>
+                        </div>
+                        <div class="distribution-bar">
+                            <div class="distribution-fill" style="width: 15%"></div>
+                        </div>
+                    </div>
+                    <div class="distribution-item">
+                        <div class="distribution-label">
+                            <span>Participantes activos</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="distribution-bar">
+                            <div class="distribution-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <div class="container">
+            <h2 class="section-title">Proyectos Estratégicos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Proyecto residencial" class="project-image">
+                    <div class="project-overlay">
+                        <h3>Proyectos Residenciales</h3>
+                        <p>Conceptualización y análisis financiero de proyectos habitacionales sostenibles.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Proyecto comercial" class="project-image">
+                    <div class="project-overlay">
+                        <h3>Proyectos Comerciales</h3>
+                        <p>Desarrollo de espacios comerciales con enfoque en sostenibilidad y rentabilidad.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Capacitaciones" class="project-image">
+                    <div class="project-overlay">
+                        <h3>DIHSR - Capacitación</h3>
+                        <p>Curso de Desarrollo Inmobiliario Habitacional Sostenible y Rentable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Información de contacto</h3>
+                    <p><i class="fas fa-envelope"></i> somos.comunamx@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> 444 303 0448</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Venustiano Carranza #1267, Tequisquiapan, San Luis Potosí</p>
+                    <p><i class="fas fa-clock"></i> Lunes a viernes, de 10:00 a.m. a 3:00 p.m.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <div class="logo-icon"></div>
+                        <div class="logo-text">
+                            COMUNA <span>HÁBITAT</span>
+                        </div>
+                    </div>
+                    <p>Hacemos ciudad, desarrollamos valor. Consultoría, planeación, gestión y promoción de proyectos inmobiliarios rentables y sostenibles.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#modelo-negocio">Modelo de Negocio</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Planeación y Diseño</a></li>
+                        <li><a href="#">Gestión y Ejecución</a></li>
+                        <li><a href="#">Promoción y Consultoría</a></li>
+                        <li><a href="#">Capacitaciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Comuna Hábitat. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
